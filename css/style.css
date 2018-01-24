@@ -8,6 +8,7 @@ body, html {
 }
 h1 {
 	font-weight: 700;
+	padding-bottom: 10%
 }
 h1 strong {
 	font-weight: 900;
@@ -162,7 +163,7 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/pp.jpg) no-repeat center center fixed;
+	background: url(../img/test.png) no-repeat center bottom fixed;
 	background-color: #000;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
@@ -185,6 +186,7 @@ hr {
 }
 #intro .intro-body .intro-text {
 	font-size: 18px;
+	text-shadow: 2px 2px grey
 }
 
 @media(min-width:768px) {
@@ -203,9 +205,9 @@ hr {
 	color: #f6f6f6;
 	background: #cf5022;
 	border: 0;
-	padding: 12px 24px;
-	margin: 0 8px;
-	font-size: 18px;
+	padding: 24px 64px;
+	margin: 20px 40px;
+	font-size: 24px;
 	transition: all 0.5s;
 }
 .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
