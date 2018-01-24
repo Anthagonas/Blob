@@ -163,8 +163,8 @@ hr {
 	padding: 100px 0;
 	text-align: center;
 	color: #fff;
-	background: url(../img/test.png) no-repeat center bottom fixed;
-	background-color: #000;
+	background: url(../img/back.png) no-repeat center bottom fixed;
+	background-color: black;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
