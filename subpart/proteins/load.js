@@ -1,3 +1,7 @@
+function initialLoad(){
+    var xhttp = new XMLHttpRequest();
+}
+
 function load(){
     // var x = document.createElement("INPUT");
     // x.setAttribute("type", "file");
@@ -21,7 +25,7 @@ function load(){
     stage.loadFile(doc, {defaultRepresentation: true}).then( function( comp){
         console.log("loading successful");
         listeProts.push(comp);
-        displayProteins();
+        // displayProteins();
         addChoice("mySelect1");
         addChoice("mySelect2");
     });
@@ -29,29 +33,29 @@ function load(){
 }
 
 function addChoice(selectName){
-    var dropdown = document.getElementById(selectName);
+    var dropdownSelected = document.getElementById(selectName);
     var option = document.createElement("option");
     option.class = "option";
     option.text = listeProts[listeProts.length-1].name;
-    dropdown.add(option);
+    dropdownSelected.add(option);
 }
 
 function clearChoice(selectName){
-    dropdown = document.getElementById(selectName);
-    while (dropdown.children[1]) {
-        dropdown.removeChild(dropdown.children[1]);
+    dropdownSelected = document.getElementById(selectName);
+    while (dropdownSelected.children[1]) {
+        dropdownSelected.removeChild(dropdownSelected.children[1]);
     }
 }
 
-function displayProteins(){
-    var names = "";
-    console.log(listeProts);
-    for (i=0;i<listeProts.length;i++) {
-        console.log(listeProts[i].name);
-        names += listeProts[i].name + "<br />";
-    }
-    document.getElementById("proteins").innerHTML = names;
-}
+// function displayProteins(){
+//     var names = "";
+//     console.log(listeProts);
+//     for (i=0;i<listeProts.length;i++) {
+//         console.log(listeProts[i].name);
+//         names += listeProts[i].name + "<br />";
+//     }
+//     document.getElementById("proteins").innerHTML = names;
+// }
 
 function changeRepresentation(representation){
     stage.eachComponent(function( o ){
@@ -64,7 +68,7 @@ function changeRepresentation(representation){
 function clear(){
     stage.removeAllComponents();
     listeProts = [];
-    displayProteins();
+    // displayProteins();
     clearChoice("mySelect1");
     clearChoice("mySelect2");
 }
@@ -101,20 +105,22 @@ window.onclick = function(event) {
   // }
 }
 
+document.addEventListener("load", initialLoad());
+
 function dock(){
-    var dropdown = document.getElementById("mySelect1");
-    dropdown.size = listeProts.length;
-    var option;
-    for(var j; i < dropdown.length; j++){
-        dropdown.remove(dropdown[j])
+    var prot1 = document.getElementById("mySelect1")
+    var prot1pdb = prot1.options[prot1.selectedIndex].text
+
+    var prot2 = document.getElementById("mySelect2")
+    var prot2pdb = prot2.options[prot2.selectedIndex].text
+
+    if (prot1pdb === "Select first protein..." || prot2pdb === "Select second protein..."){
+        alert("Please select two protein files for docking.")
     }
-    for(var i = 0; i < listeProts.length; i++){
-        option = document.createElement("option");
-        option.class = "option"
-        option.text = listeProts[i].name;
-        dropdown.add(option);
+    else{
+        window.confirm("Confirm that you want to dock?");
+        // TODO : Docking code
     }
-    document.getElementById("mySelect1").classList.toggle("show");
 }
 
 
