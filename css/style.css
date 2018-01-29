@@ -210,6 +210,7 @@ hr {
 	font-size: 24px;
 	transition: all 0.5s;
 }
+
 .btn-default:hover, .btn-default:focus, .btn-default.focus, .btn-default:active, .btn-default.active {
 	color: #f6f6f6;
 	background-color: #a13e1a;
