@@ -13,3 +13,7 @@
 .dockButton{
     width:100%;
 }
+
+canvas{
+    border: 1px solid white;    
+}
