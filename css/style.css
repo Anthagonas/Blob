@@ -422,6 +422,7 @@ ol.type li a:hover {
 	background: #e6e6e6;
 }
 canvas.mvtcanvas {
+	background-color: #555;
 	margin-top: 5%;
 	margin-bottom: 5%;
 }
