@@ -421,6 +421,10 @@ ol.type li a:hover {
 	padding: 140px 0;
 	background: #e6e6e6;
 }
+canvas.mvtcanvas {
+	margin-top: 5%;
+	margin-bottom: 5%;
+}
 img.img-thumbnail.team-img {
 	width: 200px;
 	height: 200px;
